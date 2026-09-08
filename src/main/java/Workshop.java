@@ -289,18 +289,30 @@ public class Workshop {
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        // TODO: Implementar el método para el juego de Piedra, Papel, Tijera, Lagarto, Spock.
-        // Las reglas del juego son:
-        // - Piedra vence a Tijera y Lagarto
-        // - Papel vence a Piedra y Spock
-        // - Tijera vence a Papel y Lagarto
-        // - Lagarto vence a Spock y Papel
-        // - Spock vence a Tijera y Piedra
+        if (eleccionUsuario == null) {
+            return "Entrada inválida";
+        }
 
+        String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+        String eleccionComputadora = opciones[(int)(Math.random() * opciones.length)];
 
-        // El método debe retornar un mensaje indicando el resultado del juego.
-        // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
-        return "";
+        String usuario = eleccionUsuario.trim().toLowerCase();
+        String computadora = eleccionComputadora.toLowerCase();
+
+        boolean ganaUsuario =
+                (usuario.equals("Piedra") && (computadora.equals("Tijera") || computadora.equals("Lagarto"))) ||
+                        (usuario.equals("Papel") && (computadora.equals("Piedra") || computadora.equals("Spock"))) ||
+                        (usuario.equals("Tijera") && (computadora.equals("Papel") || computadora.equals("Lagarto"))) ||
+                        (usuario.equals("Lagarto") && (computadora.equals("Spock") || computadora.equals("Papel"))) ||
+                        (usuario.equals("Spock") && (computadora.equals("Tijera") || computadora.equals("Piedra")));
+
+        if (usuario.equals(computadora)) {
+            return "Empate";
+        } else if (ganaUsuario) {
+            return "Ganaste";
+        } else {
+            return "Perdiste";
+        }
     }
 
     public String pptls2(String game[]) {
