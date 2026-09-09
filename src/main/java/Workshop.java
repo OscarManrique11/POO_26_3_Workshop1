@@ -342,7 +342,37 @@ Rock crushes Scissors
     }
 
     public String zoodiac(int day, int month) {
-        return "";
+        if (day <= 0 || month <= 0 || month > 12 || day > 31) {
+            return "Invalid Date";
+        }
+        switch (month) {
+            case 1:
+                return (day < 20) ? "Capricornio" : "Acuario";
+            case 2:
+                return (day < 19) ? "Acuario" : "Piscis";
+            case 3:
+                return (day < 21) ? "Piscis" : "Aries";
+            case 4:
+                return (day < 20) ? "Aries" : "Tauro";
+            case 5:
+                return (day < 21) ? "Tauro" : "Géminis";
+            case 6:
+                return (day < 21) ? "Géminis" : "Cáncer";
+            case 7:
+                return (day < 23) ? "Cáncer" : "Leo";
+            case 8:
+                return (day < 23) ? "Leo" : "Virgo";
+            case 9:
+                return (day < 23) ? "Virgo" : "Libra";
+            case 10:
+                return (day < 23) ? "Libra" : "Escorpio";
+            case 11:
+                return (day < 22) ? "Escorpio" : "Sagitario";
+            case 12:
+                return (day < 22) ? "Sagitario" : "Capricornio";
+            default:
+                return "Fecha inválida";
+        }
     }
 
 
