@@ -279,7 +279,14 @@ public class Workshop {
 
     // Método que convierte un número en su representación binaria
     public String convertirABinario(int numero) {
-        return Integer.toBinaryString(numero);
+        if (numero == 0) {
+            return "0";
+        }
+        if (numero < 0) {
+            return "-" + Integer.toBinaryString(Math.abs(numero));
+        } else {
+            return Integer.toBinaryString(numero);
+        }
     }
 
     // Método que convierte un número en su representación hexadecimal
