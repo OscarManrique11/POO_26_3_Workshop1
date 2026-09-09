@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Locale;
 
 public class Workshop {
     public static void main(String[] args) {
@@ -221,12 +222,17 @@ public class Workshop {
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
         return cadena.length();
+        //no funciona el test pone que espera 13 caracteres para hola mundo cuando este tiene 10 caracteres
     }
 
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
+        if (cadena == null) {
+            return "";
+        }
        StringBuilder invertida = new StringBuilder(cadena);
        return invertida.reverse().toString();
+       //el test esta mal esta esperando !@#321 para 123@#! cuando deberia ser !#@321
     }
 
     // Método que verifica si una cadena es un palíndromo
@@ -238,8 +244,12 @@ public class Workshop {
 
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
+        if (cadena == null || cadena.isEmpty()) {
+            return 0;
+        }
         String[] palabras = cadena.trim().split("\\s+");
         return palabras.length;
+        //el test esta mal hola mundo hoy esta esperando 4 palabras cuando solo tiene 3
     }
 
     // Método que convierte una cadena a mayúsculas
@@ -274,7 +284,7 @@ public class Workshop {
             return 0.0;
         }
         double suma = 0.0;
-        for (int numero : lista) {
+        for (double numero : lista) {
             suma += numero;
         }
         return suma / lista.size();
@@ -329,6 +339,8 @@ public class Workshop {
         }
     }
 
+
+
     public String pptls2(String game[]) {
         //Retornar player ganador o empate
             /*
@@ -349,29 +361,35 @@ Spock vaporizes Rock
 Rock crushes Scissors
          */
         return "";
+        //no pude
     }
 
     public double areaCirculo(double radio) {
         return Math.PI * radio * radio;
+        //esta mal multiplica por 10 cuando deberia ser por 100
     }
 
     public String zoodiac(int day, int month) {
         if (day <= 0 || month <= 0 || month > 12 || day > 31) {
             return "Invalid Date";
         }
+        int[] diaspormes = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if (day > diaspormes[month - 1]) {
+            return "Invalid Date";
+        }
         switch (month) {
             case 1:
                 return (day < 20) ? "Capricornio" : "Acuario";
             case 2:
-                return (day < 19) ? "Acuario" : "Piscis";
+                return (day < 19) ? "Acuario" : "Pisces";
             case 3:
-                return (day < 21) ? "Piscis" : "Aries";
+                return (day < 21) ? "Pisces" : "Aries";
             case 4:
                 return (day < 20) ? "Aries" : "Tauro";
             case 5:
-                return (day < 21) ? "Tauro" : "Géminis";
+                return (day < 21) ? "Tauro" : "Gemini";
             case 6:
-                return (day < 21) ? "Géminis" : "Cáncer";
+                return (day < 21) ? "Gemini" : "Cancer";
             case 7:
                 return (day < 23) ? "Cancer" : "Leo";
             case 8:
