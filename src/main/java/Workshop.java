@@ -284,7 +284,11 @@ public class Workshop {
 
     // Método que convierte un número en su representación hexadecimal
     public String convertirAHexadecimal(int numero) {
-        return Integer.toHexString(numero).toUpperCase();
+        if (numero < 0) {
+            return "-" + Integer.toHexString(Math.abs(numero)).toUpperCase();
+        } else {
+            return Integer.toHexString(numero).toUpperCase();
+        }
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
