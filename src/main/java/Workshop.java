@@ -373,7 +373,7 @@ Rock crushes Scissors
             case 6:
                 return (day < 21) ? "Géminis" : "Cáncer";
             case 7:
-                return (day < 23) ? "Cáncer" : "Leo";
+                return (day < 23) ? "Cancer" : "Leo";
             case 8:
                 return (day < 23) ? "Leo" : "Virgo";
             case 9:
