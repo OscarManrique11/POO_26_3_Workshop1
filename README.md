@@ -206,4 +206,4 @@ public int sumarDosNumeros(int a, int b) {
 }
 ```
 
-Este es el patrón a seguir para todos los demás métodos: reemplaza el `return 0;` (o `return "";` / `return new int[0];`) con la lógica correcta.
+Este es el patrón a seguir para todos los demás métodos: reemplaza el `return 0;` (o `return "";` / `return new int[0];`) con la lógica correcta
